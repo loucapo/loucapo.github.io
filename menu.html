@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boswell's Delicatessen - Delicious breakfast, specialty heroes, signature wraps, salads, burgers, and more!">
+    <meta name="author" content="Boswell's Delicatessen">
+    <title>Boswell's Delicatessen</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+</head>
+<body>
+<style>body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+header {
+    background: #ec2028;
+    color: #ffffff;
+    padding: 1rem 0;
+    display: flex;
+}
+
+.header-right {
+    width: 100%;
+    margin-left: 100px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header img {
+    width: 200px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+section {
+    margin-bottom: 40px;
+}
+h2 {
+    color: #d32f2f;
+    border-bottom: 2px solid #d32f2f;
+    padding-bottom: 5px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    background: #ffe0b2;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #d32f2f;
+    color: white;
+    margin-top: 40px;
+}
+.hero-image {
+    width: 100%;
+    height: 200px;
+    background: url('https://source.unsplash.com/1000x200/?deli,sandwich') center/cover no-repeat;
+    border-radius: 10px 10px 0 0;
+}
+
+/* "Hide" checkbox -- moves it off screen*/
+#menu-btn {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 250px;
+    margin-right: 2rem;
+}
+
+/*header {*/
+    /*display: grid;*/
+    /*grid-template-areas:*/
+            /*"title   title   hamburger"*/
+            /*"nav     nav     nav";*/
+/*}*/
+h1 {
+    grid-area: title;
+}
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+.menu-btn {
+    display: none;
+}
+.menu-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    grid-area: hamburger;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding: 30px 20px 30px 0;
+    user-select: none;
+    visibility: visible;
+}
+.navicon {
+    background: #FFF;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+}
+.navicon:before {
+    top: 5px;
+}
+.navicon:after {
+    top: -5px;
+}
+.navicon:before,
+.navicon:after {
+    background: #FFF;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    transition: all 0.2s ease-out;
+}
+.menu {
+    grid-area: nav;
+    max-width: unset;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.menu a {
+    padding: 20px 20px;
+    /*border-right: 1px solid #f4f4f4;*/
+    /*background-color: #eee;*/
+    width: 100%;
+    text-align: center;
+}
+.menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+.menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+.menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+.menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+.menu-btn:checked ~ .menu-icon .navicon:before,
+.menu-btn:checked ~ .menu-icon .navicon:after {
+    top: 0;
+}
+</style>
+<header>
+    <div class="header-left">
+        <img src="boswells-logo.png" />
+    </div>
+
+    <div class="header-right">
+        <h1>Welcome to Boswell's Delicatessen</h1>
+        <p>1828 Merrick Ave, Merrick NY 11566 | Phone: 516-223-9103</p>
+    </div>
+
+    <!--<input class="menu-btn" type="checkbox" id="menu-btn" />-->
+    <!--<label class="menu-icon" for="menu-btn">-->
+        <!--<span class="navicon" />-->
+    <!--</label>-->
+    <!--<nav class="menu">-->
+        <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+            <!--<span class="nav-item"><a href="#breakfast">Breakfast</a></span>-->
+            <!--<span class="nav-item"><a href="#specialty-heroes">Specialty Heroes</a></span>-->
+            <!--<span class="nav-item"><a href="#wraps">Signature Wraps</a></span>-->
+            <!--<span class="nav-item"><a href="#triple-deckers">Famous Triple Deckers</a></span>-->
+            <!--<span class="nav-item"><a href="#salads">Salads</a></span>-->
+            <!--<span class="nav-item"><a href="#burgers">Burgers</a></span>-->
+            <!--<span class="nav-item"><a href="#dinners">Fried Dinners</a></span>-->
+            <!--<span class="nav-item"><a href="#appetizers">Appetizers</a></span>-->
+            <!--<span class="nav-item"><a href="#create-your-own">Create Your Own</a></span>-->
+        <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+    <!--</nav>-->
+</header>
+<main>
+    <div class="hero-image">
+        <img src="images/breakfast.png" />
+    </div>
+
+    <section id="breakfast">
+        <h2>Breakfast</h2>
+        <p>All Breakfast Sandwiches are made with 2 Scrambled Eggs on a Roll unless otherwise noted.</p>
+        <ul>
+            <li>Eggs - $3.75<br>Simple and satisfying scrambled eggs on a roll.</li>
+            <li>With Bacon, Sausage or Ham - $5.00<br>Add a protein punch with bacon, sausage, or ham.</li>
+            <li>With Steak - $5.50<br>Hearty steak paired with fluffy scrambled eggs.</li>
+            <li>With Spinach & Mushrooms - $5.25<br>Fresh spinach and mushrooms for a veggie delight.</li>
+            <li>With Potato - $5.25<br>Golden potatoes add a comforting touch.</li>
+            <li>With Cheese - $4.50<br>Melted cheese adds a creamy finish.</li>
+            <li>Hungry Man Hero - $11.75<br>3 eggs, ham, sausage, bacon, and cheese for a true feast.</li>
+            <li>3 Egg Whites - $3.75<br>Light and healthy egg whites.</li>
+            <li>With Turkey - $5.00<br>Lean turkey for a protein-packed breakfast.</li>
+            <li>Grilled Cheese - $5.25<br>Classic melted cheese on grilled bread.</li>
+            <li>BLT - $8.00<br>Bacon, lettuce, and tomato perfection.</li>
+        </ul>
+        <br/><br/><p>Omelette Platters made with 3 Scrambled Eggs, served with Hash Browns or Home Fries & Toast.</p>
+        <ul>
+            <li>Western Omelette - $10.25<br>Eggs, Ham, Peppers, Onions & Tomato</li>
+            <li>Spanish Omelette - $9.25<br>Eggs, Peppers, Onions & Tomato</li>
+            <li>Hungry Man Omelette - $13.99</li>
+            <li>Mushroom Omelette - $8.99</li>
+            <li>Spinach Omelette - $8.99</li>
+            <li>Bacon, Ham, or Sausage Omelette - $9.75</li>
+            <li>Cheese Omelette - $8.99</li>
+            <li>Pancakes or French Toast (3) - $6.75</li>
+        </ul>
+        <br><p>
+        Extras: Home Fries or Hash on a Sandwich $1.50, Side of Hash Brown $3.99,<br>
+        Home Fries small/large $2.99/$3.99, Bacon, Sausage or Ham extra/side $2.00/$3.50, Cheese $0.75,<br>
+        Mushrooms, Peppers, Spinach or Broccoli $0.50, Avocado $1.50, On Hero $ 2.50<br>
+    </p>
+        <p>
+            Assorted Muffins, Yogurt Muffins, Parfaits & Mixed Fruit available.
+        </p>
+    </section>
+
+    <section id="specialty-heroes">
+        <h2>Specialty Heroes</h2>
+        <ul>
+            <li>Mutha Clucka - $11.75<br>Blazing buffalo chicken, jalapeño pepper jack cheese, lettuce, tomato, and spicy mayo.</li>
+            <li>Reuben - $12.50<br>Grilled pastrami or corned beef, melted Swiss cheese, sauerkraut, and Russian dressing.</li>
+            <li>Dagwood - $12.25<br>Roast beef, turkey, American cheese, lettuce, tomato, and mayo.</li>
+            <li>Turkey Shoot - $11.50<br>Turkey with melted Swiss cheese, coleslaw, and Russian dressing.</li>
+            <li>Godfather - $11.75<br>Ham, salami, pepperoni, cappy ham, provolone, lettuce, tomato, and vinaigrette dressing.</li>
+            <li>American Combo - $11.75<br>Turkey, roast beef, deluxe ham, Swiss and American cheeses, lettuce, tomato, and mayo.</li>
+            <li>Chicken Cordon Bleu - $12.50<br>Chicken cutlet, deluxe ham, melted Swiss cheese.</li>
+            <li>South of the Border - $11.75<br>Grilled roast beef, Havarti with jalapeño & BBQ sauce.</li>
+            <li>Cuban - $12.00<br>Virginia ham, Swiss cheese, pickles, roasted peppers & spicy mayo.</li>
+            <li>Super Turkey - $11.50<br>Grilled turkey & melted mozzarella on garlic hero.</li>
+            <li>Philly Cheesesteak - $12.25<br>Grilled roast beef, melted American cheese & sautéed onions.</li>
+            <li>Grilled Chicken Philly - $11.25<br>Grilled chicken, melted American cheese & sautéed onions.</li>
+            <li>California Club - $13.75<br>Grilled chicken cutlet, bacon, melted cheddar cheese, lettuce, tomato & ranch dressing.</li>
+            <li>Wild Turkey - $12.25<br>Maple honey turkey, Swiss cheese, hot cherry peppers, cole slaw & Russian dressing.</li>
+            <li>Monte Cristo - $11.75<br>Deluxe ham, turkey, melted Swiss cheese, lettuce, tomato & Russian dressing.</li>
+            <li>Black Forest - $13.75<br>Grilled pastrami, bacon & melted Swiss cheese.</li>
+            <li>Chicken Cutlet Parmigiana - $10.75<br>Chicken cutlet with marinara & melted mozzarella.</li>
+            <li>Meatball Parmigiana - $10.75<br>Meatballs with marinara & melted mozzarella.</li>
+        </ul>
+    </section>
+    <section id="wraps">
+        <h2>Signature Wraps</h2>
+        <ul>
+            <li>Grilled Chicken Caesar - $9.00<br>Grilled chicken, grated parmesan, lettuce & Caesar dressing.</li>
+            <li>The Pub - $10.25<br>Roast beef, Swiss cheese, lettuce, tomato & horseradish dressing.</li>
+            <li>Turkey BLT - $11.00<br>Turkey, bacon, lettuce, tomato & mayo.</li>
+            <li>Picasso - $9.75<br>Marinated grilled chicken, fresh mozzarella, roasted peppers & balsamic vinaigrette dressing.</li>
+            <li>Eggplant Supreme - $9.75<br>Fried eggplant, fresh mozzarella & roasted peppers.</li>
+            <li>Tugboat - $9.00<br>Tuna or veggie tuna, lettuce & tomato.</li>
+            <li>Smokehouse - $9.75<br>Maple honey turkey, Swiss cheese, lettuce, tomato & Russian dressing.</li>
+            <li>Peppercorn - $9.75<br>Cracked pepper mill turkey, cheddar cheese, lettuce, tomato & ranch dressing.</li>
+            <li>Boiler - $9.25<br>Buffalo chicken salad (fried chicken cutlet, spicy wing sauce, celery, blue cheese dressing), lettuce & tomato.</li>
+        </ul>
+    </section>
+    <section id="triple-deckers">
+        <h2>Famous Triple Deckers</h2>
+        <ul>
+            <li>Join The Club - $12.00<br>Turkey, bacon, lettuce, tomato & mayo on 3 slices of white toast.</li>
+            <li>The Dandy Andy - $11.00<br>Honey maple turkey, Swiss cheese, bacon & light mayo on your choice of toast.</li>
+            <li>Heartburn Hotel - $12.00<br>Grilled pastrami, corned beef, Swiss cheese, cole slaw & Russian dressing on 3 slices of toasted rye.</li>
+        </ul>
+    </section>
+    <section id="salads">
+        <h2>Salads</h2>
+        <span>small large</span>
+        <ul>
+            <li>Grilled Chicken Caesar - $9.25  |  $10.25 <br>Grilled Chicken, Grated Parmesan, Lettuce & Seasoned Croutons</li>
+            <li>Chef Salad - S9.25  |  $10.25<br>Lettuce, Tomato, Cucumbers, Carrots, Deluxe Ham, Turkey, Roast Beef, Swiss & American Cheeses</li>
+            <li>Deli Salad - S9.25  |  $10.25<br>Tuna, Vegetable Tuna or Chicken Salad & Hard Boiled Egg over Tossed Salad</li>
+            <li>Lower Sodium Salad - $9.25  |  $10.25<br>Lower Sodium Turkey, Lacey Swiss Cheese & Hard Boiled Egg Whites over Tossed Salad</li>
+            <li>Nutty Goat - S9.25  |  $10.25<br>Tossed Salad with Crumbled Goat Cheese, Chopped Walnuts & Craisins</li>
+            <li>Cobb Salad - $9.25  |  $10.25<br>Tossed Salad with Grilled Chicken, Bacon, Crumbled Blue Cheese & Hard Boiled Egg
+            <li>Greek - S9.25  |  $10.25<br>Tossed Salad with Feta Cheese & Olives</li>
+        </ul>
+    </section>
+    <section id="burgers">
+        <h2>Burgers</h2>
+        <p>
+            Burgers are 8 oz. of ground beef, served with lettuce, tomato, onions & ketchup<br>
+            Platters include French Fries, Side Salad (1/4 lb. Potato, Macaroni Salad or Cole Slaw)<br>
+            & 16 oz. Iced Tea, Lemonade or can of soda.<br>
+            Cheese Choices: American,<br>
+            Vermont Cheddar, Mozzarella, Havarti
+        </p>
+        <span>burger platter</span>
+        <ul>
+            <li>Hamburger - $7.00  |  $10.50</li>
+            <li>Cheeseburger - $7.75  |  $11.25</li>
+            <li>Bacon Cheeseburger - $13.25</li>
+            <li>Mushroom Burger  - $11.00</li>
+            <li>Pizza Burger  - $11.50</li>
+        </ul>
+    </section>
+    <section id="fried-dinners">
+        <h2>Fried Dinners</h2>
+        <p>
+            Served with French Fries, Side Salad (1/4 lb. Potato, Macaroni Salad or Cole Slaw)<br>
+            & 16 oz. Iced Tea, Lemonade or can of soda
+        </p>
+        <ul>
+            <li>Flounder (2) or Cod (5) - $11.00</li>
+            <li>Chicken Fingers - $11.00</li>
+        </ul>
+    </section>
+    <section id="create-your-own">
+        <h2>CREATE YOUR OWN CLASSIC</h2>
+        <p>
+            Choice of Meat or Deli Salad,<br>
+            served on Roll or Sliced Bread (White, Rye or Whole Wheat)
+        </p>
+        <p>
+            Choice of Meat: Deluxe Ham, Honey Ham, Cappy Ham, Bologna, Genoa Salami, Pepperoni, Roast Beef,
+            Corned Beef, Pastrami, Classic Chicken, Blazing Buffaloe Chicken,
+            Ovengold Turkey, Maple Honey Turkey, Lower Sodium Turkey, Cracked Pepper Millo Turkey
+        </p>
+        <p>
+            Choice of Deli Salads: Chicken Salad, Chicken Cranberry Salad, Buffalo Chicken Salad,
+            Egg Salad, Tuna Salad, Vegetable Tuna Salad, Shrimp Salad, Seafood Salad
+        </p>
+        <p>
+            Choice of Cheese: American, Swiss, Lacey Swiss, Muenster, Provolone, Mozzarella, Jalapeño Pepper Jack, Sharp Wisconsin Cheddar
+        </p>
+        <p>
+            Extras: Bagel $0.50, Wrap $0.50, Hero $2.50, Bacon $2.00, Cheese $0.75, Fresh Mozzarella $1.00,
+            Lettuce/Tomato/Onions $0.50, Roasted Peppers $1.00, Hot Cherry Peppers $0.75, Cole Slaw $0.75
+        </p>
+    </section>
+    <section id="appetizers">
+        <h2>APPETIZERS</h2>
+        <span>small large</span>
+        <span>small large</span>
+        <ul>
+            <li>French Fries - $4.25  |  $5.25</li>
+            <li>Seasoned Fries - $4.25  |  $5.25</li>
+            <li>Psycho Fries - $9.75<br>Chopped chicken, bacon, melted mozzarella</li>
+            <li>Mozzarella Sticks - $5.25  |  $8.25</li>
+            <li>Onion Rings - $4.25  |  $5.25</li>
+            <li>Mac & Cheese / Soup - $4.25  |  $5.25</li>
+        </ul>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2025 Boswell's Delicatessen. All rights reserved.</p>
+</footer>
+</body>
+</html>
